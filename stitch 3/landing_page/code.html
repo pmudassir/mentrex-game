@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff4400",
+                        "background-light": "#fefaf4",
+                        "background-dark": "#23140f",
+                        "warm-black": "#1A0F00",
+                        "warm-brown": "#7A5C44",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
+<!-- Decorative Blobs -->
+<div class="absolute -top-24 -left-24 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-24 -right-24 w-80 h-80 bg-orange-400/10 rounded-full blur-3xl"></div>
+<!-- Main Container -->
+<div class="relative w-full max-w-[380px] flex flex-col items-center gap-8 z-10">
+<!-- Top Badge -->
+<div class="bg-primary/10 text-primary px-4 py-1.5 rounded-full flex items-center gap-2 border border-primary/20">
+<span class="material-symbols-outlined text-sm font-bold">bolt</span>
+<span class="text-xs font-bold uppercase tracking-wider">Mentrex Campaign</span>
+</div>
+<!-- Hero Content -->
+<div class="flex flex-col items-center text-center">
+<div class="text-[80px] mb-4">🧠</div>
+<h1 class="text-warm-black dark:text-slate-100 text-[36px] font-[900] leading-tight tracking-[-0.03em] mb-3">
+                30-Second Brain Challenge
+            </h1>
+<p class="text-warm-brown dark:text-slate-400 text-sm font-medium">
+                Solve emoji puzzles. Win Amazon Gift Cards 🎁
+            </p>
+</div>
+<!-- Input Section -->
+<div class="w-full space-y-4">
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold text-warm-brown/70 dark:text-slate-500 uppercase tracking-widest ml-1">Enter Mobile Number</label>
+<div class="flex gap-2">
+<div class="flex items-center justify-center bg-orange-50 dark:bg-slate-800 border-2 border-orange-100 dark:border-slate-700 px-3 py-4 rounded-xl text-warm-black dark:text-slate-100 font-bold">
+                        +91
+                    </div>
+<input class="flex-1 bg-orange-50 dark:bg-slate-800 border-2 border-orange-100 dark:border-slate-700 focus:border-primary focus:ring-0 rounded-xl px-4 py-4 text-lg font-bold text-warm-black dark:text-slate-100 placeholder:text-warm-brown/30" placeholder="00000 00000" type="tel"/>
+</div>
+</div>
+<!-- CTA Button -->
+<button class="w-full bg-gradient-to-r from-[#FF4500] to-[#FF8C00] hover:opacity-90 text-white font-extrabold py-5 rounded-xl shadow-lg shadow-primary/20 flex items-center justify-center gap-2 transition-transform active:scale-[0.98]">
+                Start Challenge
+                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<!-- Features/Badges -->
+<div class="flex flex-wrap justify-center gap-2">
+<div class="bg-white dark:bg-slate-800/50 border border-orange-100 dark:border-slate-700 px-3 py-2 rounded-full flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-primary text-sm">bolt</span>
+<span class="text-[11px] font-bold text-warm-brown dark:text-slate-300">30 seconds</span>
+</div>
+<div class="bg-white dark:bg-slate-800/50 border border-orange-100 dark:border-slate-700 px-3 py-2 rounded-full flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-primary text-sm">emoji_events</span>
+<span class="text-[11px] font-bold text-warm-brown dark:text-slate-300">Leaderboard</span>
+</div>
+<div class="bg-white dark:bg-slate-800/50 border border-orange-100 dark:border-slate-700 px-3 py-2 rounded-full flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-primary text-sm">featured_seasonal_and_gifts</span>
+<span class="text-[11px] font-bold text-warm-brown dark:text-slate-300">Real rewards</span>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Component (modified for landing context) -->
+<div class="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-t border-orange-100 dark:border-slate-800 flex justify-around p-3 md:hidden">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined fill-[1]">home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-warm-brown dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">trophy</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-warm-brown dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">card_giftcard</span>
+</a>
+</div>
+</body></html>

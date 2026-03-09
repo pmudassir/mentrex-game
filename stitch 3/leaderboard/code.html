@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff4400",
+                        "background-light": "#f8f6f5",
+                        "background-dark": "#23140f",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col max-w-md mx-auto bg-background-light dark:bg-background-dark overflow-x-hidden">
+<!-- Header -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 border-b border-primary/10">
+<div class="text-slate-900 dark:text-slate-100 flex size-12 shrink-0 items-center">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-12">Leaderboard</h2>
+</div>
+<div class="px-4 pb-3 pt-6">
+<h2 class="text-2xl font-bold leading-tight tracking-tight">Top players this week</h2>
+<p class="text-primary font-medium text-sm">Resetting in 2 days, 4 hours</p>
+</div>
+<!-- Rank 1: Gold -->
+<div class="px-4 py-2">
+<div class="flex items-center justify-between gap-4 rounded-xl bg-gradient-to-br from-yellow-100 to-yellow-200 dark:from-yellow-900/40 dark:to-yellow-800/20 p-5 shadow-sm border border-yellow-300/30">
+<div class="flex flex-row items-center gap-4">
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-yellow-400 text-2xl shadow-inner">🥇</div>
+<div class="flex flex-col">
+<p class="text-yellow-800 dark:text-yellow-200 text-xs font-bold uppercase tracking-wider">Rank 1</p>
+<p class="text-slate-900 dark:text-slate-100 text-lg font-bold">Alex Johnson</p>
+<p class="text-slate-600 dark:text-slate-400 text-xs">Springfield High</p>
+</div>
+</div>
+<div class="flex items-center justify-center rounded-lg bg-white/80 dark:bg-slate-800/80 px-3 py-1.5 shadow-sm">
+<span class="text-primary font-bold text-sm tracking-tight">14,250 pts</span>
+</div>
+</div>
+</div>
+<!-- Rank 2: Silver -->
+<div class="px-4 py-2">
+<div class="flex items-center justify-between gap-4 rounded-xl bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800/40 dark:to-slate-700/20 p-5 shadow-sm border border-slate-300/30">
+<div class="flex flex-row items-center gap-4">
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-slate-300 text-2xl shadow-inner">🥈</div>
+<div class="flex flex-col">
+<p class="text-slate-600 dark:text-slate-300 text-xs font-bold uppercase tracking-wider">Rank 2</p>
+<p class="text-slate-900 dark:text-slate-100 text-lg font-bold">Sarah Miller</p>
+<p class="text-slate-600 dark:text-slate-400 text-xs">Riverside Academy</p>
+</div>
+</div>
+<div class="flex items-center justify-center rounded-lg bg-white/80 dark:bg-slate-800/80 px-3 py-1.5 shadow-sm">
+<span class="text-primary font-bold text-sm tracking-tight">12,800 pts</span>
+</div>
+</div>
+</div>
+<!-- Rank 3: Bronze/Warm -->
+<div class="px-4 py-2">
+<div class="flex items-center justify-between gap-4 rounded-xl bg-gradient-to-br from-orange-100 to-orange-200 dark:from-orange-900/40 dark:to-orange-800/20 p-5 shadow-sm border border-orange-300/30">
+<div class="flex flex-row items-center gap-4">
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-orange-300 text-2xl shadow-inner">🥉</div>
+<div class="flex flex-col">
+<p class="text-orange-800 dark:text-orange-200 text-xs font-bold uppercase tracking-wider">Rank 3</p>
+<p class="text-slate-900 dark:text-slate-100 text-lg font-bold">David Chen</p>
+<p class="text-slate-600 dark:text-slate-400 text-xs">Eastside Prep</p>
+</div>
+</div>
+<div class="flex items-center justify-center rounded-lg bg-white/80 dark:bg-slate-800/80 px-3 py-1.5 shadow-sm">
+<span class="text-primary font-bold text-sm tracking-tight">11,420 pts</span>
+</div>
+</div>
+</div>
+<!-- Rank 4+ White Cards -->
+<div class="px-4 py-2 space-y-2">
+<div class="flex items-center justify-between gap-4 rounded-lg bg-white dark:bg-slate-800 p-4 shadow-sm border border-primary/5">
+<div class="flex items-center gap-4">
+<span class="w-8 text-center font-bold text-slate-400">#4</span>
+<div class="flex flex-col">
+<p class="text-slate-900 dark:text-slate-100 font-bold">Emma Wilson</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Lincoln Charter</p>
+</div>
+</div>
+<div class="flex items-center justify-center rounded-lg bg-background-light dark:bg-slate-700 px-3 py-1">
+<span class="text-slate-600 dark:text-slate-300 font-medium text-xs">9,100 pts</span>
+</div>
+</div>
+<div class="flex items-center justify-between gap-4 rounded-lg bg-white dark:bg-slate-800 p-4 shadow-sm border border-primary/5">
+<div class="flex items-center gap-4">
+<span class="w-8 text-center font-bold text-slate-400">#5</span>
+<div class="flex flex-col">
+<p class="text-slate-900 dark:text-slate-100 font-bold">Marcus Brown</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Central Tech</p>
+</div>
+</div>
+<div class="flex items-center justify-center rounded-lg bg-background-light dark:bg-slate-700 px-3 py-1">
+<span class="text-slate-600 dark:text-slate-300 font-medium text-xs">8,450 pts</span>
+</div>
+</div>
+<div class="flex items-center justify-between gap-4 rounded-lg bg-white dark:bg-slate-800 p-4 shadow-sm border border-primary/5">
+<div class="flex items-center gap-4">
+<span class="w-8 text-center font-bold text-slate-400">#6</span>
+<div class="flex flex-col">
+<p class="text-slate-900 dark:text-slate-100 font-bold">Sofia Rodriguez</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Westview Arts</p>
+</div>
+</div>
+<div class="flex items-center justify-center rounded-lg bg-background-light dark:bg-slate-700 px-3 py-1">
+<span class="text-slate-600 dark:text-slate-300 font-medium text-xs">8,100 pts</span>
+</div>
+</div>
+</div>
+<!-- Play Now Floating Action -->
+<div class="fixed bottom-24 left-1/2 -translate-x-1/2 w-full max-w-xs px-4">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-full shadow-lg flex items-center justify-center gap-2 transition-transform active:scale-95">
+                Play Now
+                <span class="material-symbols-outlined">trending_flat</span>
+</button>
+</div>
+<div class="h-32 bg-background-light dark:bg-background-dark"></div>
+<!-- Bottom Navigation -->
+<div class="fixed bottom-0 left-0 right-0 max-w-md mx-auto flex gap-2 border-t border-primary/10 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 pb-6 pt-2 z-20">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">home</span>
+<p class="text-xs font-medium">Home</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">sports_esports</span>
+<p class="text-xs font-medium">Games</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">leaderboard</span>
+<p class="text-xs font-medium">Ranking</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">person</span>
+<p class="text-xs font-medium">Profile</p>
+</a>
+</div>
+</div>
+</body></html>

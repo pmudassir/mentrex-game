@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff4400",
+                        "background-light": "#f8f6f5",
+                        "background-dark": "#23140f",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>Mentrex Admin Dashboard</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10 px-4 py-3">
+<div class="max-w-5xl mx-auto flex items-center justify-between">
+<h1 class="text-xl font-bold flex items-center gap-2">
+<span class="text-2xl">🧠</span>
+<span>Mentrex Admin</span>
+</h1>
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-sm">download</span>
+                Export CSV
+            </button>
+</div>
+</header>
+<main class="max-w-5xl mx-auto p-4 space-y-6 pb-24">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-primary/5 shadow-sm">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider">Total Leads</p>
+<div class="flex items-end justify-between mt-1">
+<p class="text-2xl font-bold text-slate-900 dark:text-white">1,284</p>
+<span class="text-emerald-500 text-xs font-bold flex items-center bg-emerald-500/10 px-1.5 py-0.5 rounded">+5%</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-primary/5 shadow-sm">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider">Winners</p>
+<div class="flex items-end justify-between mt-1">
+<p class="text-2xl font-bold text-slate-900 dark:text-white">156</p>
+<span class="text-emerald-500 text-xs font-bold flex items-center bg-emerald-500/10 px-1.5 py-0.5 rounded">+2%</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-primary/5 shadow-sm">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider">Today's Winners</p>
+<div class="flex items-end justify-between mt-1">
+<p class="text-2xl font-bold text-slate-900 dark:text-white">12</p>
+<span class="text-emerald-500 text-xs font-bold flex items-center bg-emerald-500/10 px-1.5 py-0.5 rounded">+10%</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-primary/5 shadow-sm">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider">Coupons Left</p>
+<div class="flex items-end justify-between mt-1">
+<p class="text-2xl font-bold text-slate-900 dark:text-white">44</p>
+<span class="text-red-500 text-xs font-bold flex items-center bg-red-500/10 px-1.5 py-0.5 rounded">-5%</span>
+</div>
+</div>
+</div>
+<div class="flex p-1 bg-slate-200/50 dark:bg-slate-800 rounded-full w-full max-w-md mx-auto">
+<button class="flex-1 py-2 px-4 rounded-full text-sm font-bold bg-white dark:bg-slate-700 shadow-sm text-primary">Leads</button>
+<button class="flex-1 py-2 px-4 rounded-full text-sm font-bold text-slate-600 dark:text-slate-400 hover:text-primary">Coupons</button>
+<button class="flex-1 py-2 px-4 rounded-full text-sm font-bold text-slate-600 dark:text-slate-400 hover:text-primary">Settings</button>
+</div>
+<section class="space-y-4" id="leads-tab">
+<div class="flex items-center justify-between">
+<h2 class="text-lg font-bold">Recent Leads</h2>
+<span class="text-xs text-slate-500">Showing 156 winners</span>
+</div>
+<div class="space-y-3">
+<div class="bg-white dark:bg-slate-800 rounded-xl p-4 border border-primary/5 shadow-sm flex flex-col gap-3">
+<div class="flex justify-between items-start">
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-bold text-slate-900 dark:text-white">Alex Thompson</h3>
+<span class="bg-primary/10 text-primary text-[10px] px-2 py-0.5 rounded-full font-bold uppercase">Winner</span>
+</div>
+<p class="text-xs text-slate-500">+1 234 567 8900</p>
+</div>
+<div class="bg-primary text-white text-sm font-black px-2 py-1 rounded-lg">94%</div>
+</div>
+<div class="grid grid-cols-2 gap-2 text-xs">
+<div class="flex items-center gap-1 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-sm">school</span>
+                            St. Mary's Academy
+                        </div>
+<div class="flex items-center gap-1 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-sm">class</span>
+                            Grade 11-B
+                        </div>
+</div>
+<div class="flex flex-wrap gap-1 mt-1">
+<span class="bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-0.5 rounded text-[10px]">Artificial Intelligence</span>
+<span class="bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-0.5 rounded text-[10px]">Robotics</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-xl p-4 border border-primary/5 shadow-sm flex flex-col gap-3">
+<div class="flex justify-between items-start">
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-bold text-slate-900 dark:text-white">Sarah Jenkins</h3>
+</div>
+<p class="text-xs text-slate-500">+1 987 654 3210</p>
+</div>
+<div class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-black px-2 py-1 rounded-lg">68%</div>
+</div>
+<div class="grid grid-cols-2 gap-2 text-xs">
+<div class="flex items-center gap-1 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-sm">school</span>
+                            Oakwood High
+                        </div>
+<div class="flex items-center gap-1 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-sm">class</span>
+                            Grade 10
+                        </div>
+</div>
+<div class="flex flex-wrap gap-1 mt-1">
+<span class="bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-0.5 rounded text-[10px]">Digital Arts</span>
+</div>
+</div>
+</div>
+</section>
+<section class="hidden space-y-6" id="coupons-tab">
+<div>
+<h3 class="text-md font-bold mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">confirmation_number</span>
+                    Available Codes
+                </h3>
+<div class="bg-white dark:bg-slate-800 rounded-xl divide-y divide-slate-100 dark:divide-slate-700 overflow-hidden border border-primary/5">
+<div class="p-4 flex items-center justify-between">
+<code class="text-primary font-bold text-lg">MNT-X24-90J</code>
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">content_copy</span>
+</button>
+</div>
+<div class="p-4 flex items-center justify-between">
+<code class="text-primary font-bold text-lg">MNT-X24-77K</code>
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-md font-bold mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-500">verified</span>
+                    Claimed Coupons
+                </h3>
+<div class="space-y-3">
+<div class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-primary/5 flex items-center justify-between">
+<div>
+<code class="text-slate-400 line-through text-xs">MNT-X24-11A</code>
+<p class="text-sm font-bold">Alex Thompson</p>
+<p class="text-[10px] text-slate-400">Oct 24, 2023 • 14:20</p>
+</div>
+<a class="bg-emerald-500/10 text-emerald-600 p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined">chat</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<section class="hidden space-y-6" id="settings-tab">
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-primary/5 space-y-4">
+<div class="space-y-2">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Daily Coupon Limit</label>
+<input class="w-full bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 rounded-lg px-4 py-2 focus:ring-primary focus:border-primary" type="number" value="25"/>
+<p class="text-[10px] text-slate-400">Maximum winners per 24-hour cycle</p>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Winner Score Threshold (%)</label>
+<input class="w-full bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 rounded-lg px-4 py-2 focus:ring-primary focus:border-primary" type="number" value="85"/>
+<p class="text-[10px] text-slate-400">Minimum score required to automatically win a coupon</p>
+</div>
+<button class="w-full bg-primary text-white font-bold py-3 rounded-xl shadow-lg shadow-primary/20 mt-4">
+                    Save System Settings
+                </button>
+</div>
+</section>
+</main>
+<nav class="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 px-6 py-2 flex items-center justify-between z-50">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-bold">Dashboard</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[10px] font-bold">Leads</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">confirmation_number</span>
+<span class="text-[10px] font-bold">Coupons</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-bold">Settings</span>
+</a>
+</nav>
+</body></html>

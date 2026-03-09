@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+
+@theme {
+  --color-primary: #ff4400;
+  --color-background-light: #f8f6f5;
+  --color-background-dark: #23140f;
+  --color-warm-black: #1A0F00;
+  --color-warm-brown: #7A5C44;
+
+  --font-display: var(--font-lexend), "Lexend", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    min-height: max(884px, 100dvh);
+  }
+
+  body {
+    font-family: var(--font-lexend), 'Lexend', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    min-height: max(884px, 100dvh);
+  }
+
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 2px; }
+}
+
+@layer components {
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    font-size: inherit;
+    line-height: 1;
+    vertical-align: middle;
+  }
+
+  .answer-correct {
+    border-color: #22c55e !important;
+    background-color: #f0fdf4 !important;
+    color: #16a34a !important;
+  }
+
+  .answer-wrong {
+    border-color: #ef4444 !important;
+    background-color: #fef2f2 !important;
+    color: #dc2626 !important;
+  }
+
+  .answer-dimmed {
+    opacity: 0.35;
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
