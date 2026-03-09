@@ -6,7 +6,8 @@ import { useRouter, useSearchParams } from 'next/navigation'
 function RegisterContent() {
   const router = useRouter()
   const params = useSearchParams()
-  const sessionId = params.get('session')
+  const sessionIdRaw = params.get('session')
+  const sessionId = (sessionIdRaw && sessionIdRaw !== 'undefined' && sessionIdRaw !== 'null') ? sessionIdRaw : null
   const phone = params.get('phone') ?? ''
 
   const [form, setForm] = useState({
@@ -19,6 +20,7 @@ function RegisterContent() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    if (!sessionId) { router.replace('/'); return }
     if (!form.name.trim()) return setError('Please enter your name')
     if (!form.school.trim()) return setError('Please enter your school name')
 

@@ -28,6 +28,7 @@ export default function LandingPage() {
       })
       const data = await res.json()
       if (data.alreadyPlayed) { setAlreadyPlayed(true); setLoading(false); return }
+      if (!data.sessionId) { setError('Something went wrong. Please try again.'); setLoading(false); return }
       router.push(`/register?session=${data.sessionId}&phone=${cleaned}`)
     } catch {
       setError('Something went wrong. Please try again.')

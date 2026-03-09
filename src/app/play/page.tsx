@@ -113,7 +113,8 @@ function PlayContent() {
     return () => controller.abort()
   }, [sessionId])
 
-  if (!sessionId) { router.replace('/'); return null }
+  const invalidSession = !sessionId || sessionId === 'undefined' || sessionId === 'null'
+  if (invalidSession) { router.replace('/'); return null }
 
   if (loading) {
     return (
