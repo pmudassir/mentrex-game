@@ -40,7 +40,8 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ sessionId: session.id, alreadyPlayed: false })
   } catch (err) {
-    console.error('Game start error:', err)
-    return NextResponse.json({ error: 'Server error' }, { status: 500 })
+    const message = err instanceof Error ? err.message : String(err)
+    console.error('Game start error:', message, err)
+    return NextResponse.json({ error: 'Server error', detail: message }, { status: 500 })
   }
 }
