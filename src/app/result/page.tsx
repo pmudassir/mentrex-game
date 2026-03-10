@@ -71,6 +71,8 @@ function ResultContent() {
       .then((data) => {
         // Only remove after confirmed submit
         sessionStorage.removeItem(`reg_${sessionId}`)
+        // Layer 2: Mark as played in localStorage so landing page can block instantly
+        try { localStorage.setItem('mentrex_played', '1') } catch {}
         if (!data.eligible) setReward({ status: 'below' })
         else if (data.limitReached) setReward({ status: 'limit' })
         else setReward({ status: 'won', coupon: data.coupon })

@@ -14,73 +14,73 @@ async function seed() {
   // Clear old questions before inserting new ones
   await db.delete(schema.questions)
 
-  // Seed questions (much simpler — solvable in under 30s)
+  // Seed questions — medium difficulty, solvable in 15–25s for sharp students
   await db.insert(schema.questions).values([
-    // Easy — single equation, direct solve
+    // Easy — single equation, 1–2 steps
     {
       difficulty: 'easy',
-      equation: '🍎 + 🍎 = 10',
+      equation: '🍎 + 🍎 + 🍎 = 15',
       question: 'What is 🍎 ?',
-      options: ['4', '5', '6', '7'],
-      correctIndex: 1,
+      options: ['3', '4', '5', '6'],
+      correctIndex: 2,
     },
     {
       difficulty: 'easy',
-      equation: '🐶 + 🐶 + 🐶 = 9',
+      equation: '🐶 × 4 = 24',
       question: 'What is 🐶 ?',
-      options: ['2', '3', '4', '5'],
-      correctIndex: 1,
+      options: ['4', '5', '6', '7'],
+      correctIndex: 2,
     },
     {
       difficulty: 'easy',
-      equation: '🌟 × 2 = 14',
+      equation: '🌟 × 🌟 = 25',
       question: 'What is 🌟 ?',
+      options: ['3', '4', '5', '6'],
+      correctIndex: 2,
+    },
+    // Medium — two equations, substitute to find the unknown
+    {
+      difficulty: 'medium',
+      equation: '🍕 + 🌮 = 11\n🍕 - 🌮 = 3',
+      question: 'What is 🌮 ?',
+      options: ['3', '4', '5', '6'],
+      correctIndex: 1,
+    },
+    {
+      difficulty: 'medium',
+      equation: '🐱 × 🐱 = 16\n🐱 + 🐶 = 11',
+      question: 'What is 🐶 ?',
       options: ['5', '6', '7', '8'],
       correctIndex: 2,
     },
-    // Medium — two equations, simple substitution
     {
       difficulty: 'medium',
-      equation: '🍕 + 🍕 = 8\n🍕 + 🌮 = 9',
-      question: 'What is 🌮 ?',
-      options: ['3', '4', '5', '6'],
+      equation: '🌙 + 🌙 = 🌟\n🌟 - 🌙 = 5',
+      question: 'What is 🌟 ?',
+      options: ['8', '10', '12', '14'],
+      correctIndex: 1,
+    },
+    // Hard — three unknowns or non-obvious factoring
+    {
+      difficulty: 'hard',
+      equation: '🍊 + 🍎 = 11\n🍎 + 🍋 = 7\n🍊 + 🍋 = 10',
+      question: 'What is 🍊 ?',
+      options: ['5', '6', '7', '8'],
       correctIndex: 2,
     },
     {
-      difficulty: 'medium',
-      equation: '⭐ + ⭐ + ⭐ = 12\n⭐ + 🌙 = 7',
-      question: 'What is 🌙 ?',
-      options: ['2', '3', '4', '5'],
-      correctIndex: 1,
-    },
-    {
-      difficulty: 'medium',
-      equation: '🐱 + 🐱 = 6\n🐱 + 🐶 = 8',
-      question: 'What is 🐶 ?',
-      options: ['3', '4', '5', '6'],
+      difficulty: 'hard',
+      equation: '🔥 × 💧 = 24\n🔥 + 💧 = 11\n🔥 > 💧',
+      question: 'What is 🔥 ?',
+      options: ['6', '7', '8', '9'],
       correctIndex: 2,
     },
-    // Hard — two equations, slightly bigger numbers
     {
       difficulty: 'hard',
-      equation: '🍊 + 🍊 = 10\n🍎 + 🍊 = 9',
-      question: 'What is 🍎 ?',
-      options: ['3', '4', '5', '6'],
-      correctIndex: 1,
-    },
-    {
-      difficulty: 'hard',
-      equation: '🔥 + 🔥 = 12\n🔥 + 💧 = 10',
-      question: 'What is 💧 ?',
-      options: ['3', '4', '5', '6'],
-      correctIndex: 1,
-    },
-    {
-      difficulty: 'hard',
-      equation: '🐘 × 3 = 15\n🐘 + 🦁 = 9',
-      question: 'What is 🦁 ?',
-      options: ['3', '4', '5', '6'],
-      correctIndex: 1,
+      equation: '🐘 + 🦁 + 🐯 = 20\n🐘 = 🦁 + 2\n🦁 = 🐯 + 3',
+      question: 'What is 🐘 ?',
+      options: ['7', '8', '9', '10'],
+      correctIndex: 2,
     },
   ])
 

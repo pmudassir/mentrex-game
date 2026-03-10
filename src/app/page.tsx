@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -10,6 +10,13 @@ export default function LandingPage() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [alreadyPlayed, setAlreadyPlayed] = useState(false)
+
+  // Layer 2: Check localStorage on mount — show already-played immediately without API call
+  useEffect(() => {
+    try {
+      if (localStorage.getItem('mentrex_played') === '1') setAlreadyPlayed(true)
+    } catch {}
+  }, [])
 
   const handleStart = async (e: React.FormEvent) => {
     e.preventDefault()

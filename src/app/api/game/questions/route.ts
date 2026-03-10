@@ -21,6 +21,12 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ error: 'Invalid session' }, { status: 400 })
     }
 
+    // Layer 4: Session expiry — reject sessions older than 30 minutes
+    const age = Date.now() - new Date(session[0].createdAt!).getTime()
+    if (age > 30 * 60 * 1000) {
+      return NextResponse.json({ error: 'Session expired' }, { status: 410 })
+    }
+
     // Pick 1 random question per difficulty
     const easy = await db
       .select()

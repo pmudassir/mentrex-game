@@ -84,7 +84,16 @@ export async function POST(req: NextRequest) {
       .set({ hasPlayed: true })
       .where(eq(players.id, session.playerId))
 
-    return NextResponse.json({ baseScore, speedBonus, totalScore })
+    // Layer 1: Set httpOnly cookie to block re-entry across browsers/incognito
+    const response = NextResponse.json({ baseScore, speedBonus, totalScore })
+    response.cookies.set('mentrex_played', '1', {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'lax',
+      maxAge: 60 * 60 * 24 * 365,
+      path: '/',
+    })
+    return response
   } catch (err) {
     console.error('Submit error:', err)
     return NextResponse.json({ error: 'Server error' }, { status: 500 })
