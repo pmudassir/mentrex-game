@@ -49,6 +49,8 @@ export default function AdminPage() {
   const [saving, setSaving] = useState(false)
   const [saveMsg, setSaveMsg] = useState('')
   const [search, setSearch] = useState('')
+  const [clearing, setClearing] = useState(false)
+  const [clearConfirm, setClearConfirm] = useState(false)
 
   const headers = { 'x-admin-password': password }
 
@@ -100,6 +102,14 @@ export default function AdminPage() {
     setSaving(false)
     setSaveMsg('Saved!')
     setTimeout(() => setSaveMsg(''), 2000)
+  }
+
+  const handleClearData = async () => {
+    setClearing(true)
+    const res = await fetch('/api/admin/clear', { method: 'POST', headers })
+    setClearing(false)
+    setClearConfirm(false)
+    if (res.ok) { setLeads([]); await fetchData() }
   }
 
   const exportCSV = () => {
@@ -416,6 +426,44 @@ export default function AdminPage() {
                   </motion.p>
                 )}
               </AnimatePresence>
+            </div>
+
+            {/* Danger Zone */}
+            <div className="bg-white p-6 rounded-xl border border-red-200 space-y-3">
+              <h3 className="font-bold text-red-600 flex items-center gap-2">
+                <span className="material-symbols-outlined text-sm">warning</span>
+                Danger Zone
+              </h3>
+              <p className="text-xs text-slate-500">
+                Permanently deletes all players, sessions, leads, coupons, and daily reward counts. Questions and config are kept.
+              </p>
+              {!clearConfirm ? (
+                <button
+                  onClick={() => setClearConfirm(true)}
+                  className="w-full border-2 border-red-500 text-red-600 font-bold py-3 rounded-xl hover:bg-red-50 transition-colors"
+                >
+                  Clear All Data
+                </button>
+              ) : (
+                <div className="space-y-2">
+                  <p className="text-sm font-bold text-red-600 text-center">Are you sure? This cannot be undone.</p>
+                  <div className="flex gap-2">
+                    <button
+                      onClick={() => setClearConfirm(false)}
+                      className="flex-1 border border-slate-200 text-slate-600 font-bold py-2.5 rounded-xl hover:bg-slate-50"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      onClick={handleClearData}
+                      disabled={clearing}
+                      className="flex-1 bg-red-600 text-white font-bold py-2.5 rounded-xl hover:bg-red-700 disabled:opacity-60"
+                    >
+                      {clearing ? 'Clearing...' : 'Yes, Clear All'}
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
           </motion.section>
         )}
