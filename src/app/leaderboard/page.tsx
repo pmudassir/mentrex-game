@@ -34,8 +34,8 @@ export default function LeaderboardPage() {
         </div>
 
         <div className="px-4 pb-3 pt-6">
-          <h2 className="text-2xl font-bold leading-tight tracking-tight">Top players this week</h2>
-          <p className="text-primary font-medium text-sm">Resetting every Sunday</p>
+          <h2 className="text-2xl font-bold leading-tight tracking-tight">Top players</h2>
+          <p className="text-primary font-medium text-sm">Winner announced April 1st on Instagram</p>
         </div>
 
         {loading ? (
